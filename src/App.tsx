@@ -401,7 +401,7 @@ function App() {
           }}
         >
           <img
-            src={`/cards/${discardAnimation.card.suit}-${discardAnimation.card.rank}.png`}
+            src={`cards/${discardAnimation.card.suit}-${discardAnimation.card.rank}.png`}
             alt={`${discardAnimation.card.rank} of ${discardAnimation.card.suit}`}
             className="card-image"
             draggable={false}

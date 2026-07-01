@@ -7,7 +7,7 @@ describe("Card", () => {
     render(<Card card={{ suit: "H", rank: 12 }} />);
 
     const image = screen.getByRole("img", { name: "12 of H" });
-    expect(image).toHaveAttribute("src", "/cards/H-12.png");
+    expect(image).toHaveAttribute("src", "cards/H-12.png");
   });
 
   it("applies deal animation class when animateFromDraw is true", async () => {

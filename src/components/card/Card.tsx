@@ -23,7 +23,7 @@ export const Card: React.FC<CardProps> = ({
   const [isDealAnimationReady, setIsDealAnimationReady] = useState(false);
   const { suit, rank } = card;
 
-  const imagePath = `/cards/${suit}-${rank}.png`;
+  const imagePath = `cards/${suit}-${rank}.png`;
 
   useLayoutEffect(() => {
     if (!animateFromDraw) {
