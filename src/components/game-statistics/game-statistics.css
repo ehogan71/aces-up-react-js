@@ -1,0 +1,57 @@
+.game-statistics {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.game-statistics-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.game-statistics-label {
+  color: rgba(247, 234, 211, 0.85);
+  font-size: 0.95rem;
+}
+
+.game-statistics-value {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.game-statistics-clear-wrap {
+  margin-top: 8px;
+}
+
+.game-statistics-clear-button {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  font-weight: 700;
+  color: #1f150a;
+  background: linear-gradient(180deg, #f1d9a8, #c5a46d);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.game-statistics-clear-button:hover {
+  filter: brightness(1.05);
+}
+
+.game-statistics-clear-note {
+  margin: 6px 2px 0;
+  font-size: 0.8rem;
+  color: rgba(247, 234, 211, 0.72);
+}

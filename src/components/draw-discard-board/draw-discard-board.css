@@ -1,0 +1,150 @@
+.draw-discard-board {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: max(8px, env(safe-area-inset-bottom));
+  left: 0;
+  right: 0;
+  padding: 0 max(10px, env(safe-area-inset-left)) 0
+    max(10px, env(safe-area-inset-right));
+  pointer-events: none;
+}
+
+/* Brass rim */
+.draw-slot,
+.discard-slot {
+  padding: 6px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #c5a46d, #b08d57, #e2c89f);
+  box-shadow:
+    inset 0 0 6px rgba(0, 0, 0, 0.4),
+    0 0 8px rgba(0, 0, 0, 0.6);
+
+  width: var(--card-width);
+  height: var(--card-height);
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  position: relative;
+}
+
+.undo-slot {
+  width: var(--card-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.undo-button {
+  width: 100%;
+  height: calc(var(--card-height) * 0.42);
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f1d9a8, #c5a46d);
+  color: #1f150a;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.undo-button:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.undo-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  filter: saturate(0.75);
+}
+
+/* Face-down card back */
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.card-back--red {
+  background-image: url("/cards/Back-R.png");
+}
+
+.card-back--blue {
+  background-image: url("/cards/Back-B.png");
+}
+
+/* Empty slot placeholder */
+.empty-slot {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-count-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  background: #d32f2f;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 480px) {
+  .draw-discard-board {
+    bottom: max(6px, env(safe-area-inset-bottom));
+    padding: 0 max(8px, env(safe-area-inset-left)) 0
+      max(8px, env(safe-area-inset-right));
+  }
+
+  .draw-slot,
+  .discard-slot {
+    padding: 4px;
+  }
+
+  .undo-slot {
+    width: clamp(56px, calc((100vw - 54px) / 4), 72px);
+  }
+
+  .undo-button {
+    height: calc(var(--card-height) * 0.38);
+    font-size: 12px;
+  }
+
+  .card-count-badge {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    top: -7px;
+    right: -7px;
+  }
+}

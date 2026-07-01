@@ -1,0 +1,70 @@
+/*.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 40px;
+  padding: 20px 30px;
+}
+*/
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 40px;
+
+  /* Center the group of four pile columns */
+  justify-content: center;
+
+  /* Add breathing room */
+  padding: 20px 40px;
+
+  /* Prevent grid from exceeding screen width */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.pile-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* brass rim thickness */
+  padding: 5px;
+
+  /* let it size itself based on the pile */
+  width: fit-content;
+  height: fit-content;
+
+  border-radius: 12px;
+
+  box-shadow:
+    inset 0 0 6px rgba(0, 0, 0, 0.4),
+    0 0 8px rgba(0, 0, 0, 0.6);
+}
+
+.pile-slot:hover {
+  box-shadow:
+    inset 0 0 10px rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(197, 164, 109, 0.6);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .game-board {
+    gap: 14px;
+    padding: 12px 16px;
+  }
+
+  .pile-slot {
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-board {
+    gap: 6px;
+    padding: 8px 6px;
+  }
+
+  .pile-slot {
+    padding: 3px;
+  }
+}

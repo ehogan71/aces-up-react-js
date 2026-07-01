@@ -1,0 +1,75 @@
+.pile {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  box-shadow:
+    inset 0 0 12px rgba(0, 0, 0, 0.5),
+    inset 0 0 4px rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.pile-card {
+  position: absolute;
+  left: 0;
+  transition: transform 0.15s ease-out;
+}
+.playable-indicator {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+  z-index: 12;
+  pointer-events: none;
+}
+
+.playable-indicator--discard {
+  background: #4a90e2;
+}
+
+.playable-indicator--relocate {
+  background: #0f9e2a;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root {
+    --card-width: 92px;
+    --card-height: 138px;
+  }
+}
+
+/* Large phones */
+@media (max-width: 768px) {
+  :root {
+    --card-width: clamp(70px, 19vw, 84px);
+    --card-height: calc(var(--card-width) * 1.5);
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  :root {
+    --card-width: clamp(60px, calc((100vw - 54px) / 4), 72px);
+    --card-height: calc(var(--card-width) * 1.5);
+  }
+
+  .playable-indicator {
+    width: 12px;
+    height: 12px;
+    left: 5px;
+    bottom: 5px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 390px) {
+  :root {
+    --card-width: clamp(54px, calc((100vw - 50px) / 4), 68px);
+    --card-height: calc(var(--card-width) * 1.5);
+  }
+}

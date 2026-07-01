@@ -1,0 +1,60 @@
+.card {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fdf8ee;
+  background-size: cover;
+  border: 3px solid #c5a46d;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 0 6px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.44s ease,
+    opacity 0.4s ease;
+}
+
+/* Deal animation: card flies in from the draw pile */
+.deal-animation {
+  --deal-from-x: -40vw;
+  --deal-from-y: 40vh;
+  animation: dealIn 0.4s ease forwards;
+}
+
+.discard-animation-card {
+  z-index: 30;
+  pointer-events: none;
+  will-change: left, top, opacity;
+  transition:
+    left 0.38s ease-out,
+    top 0.38s ease-out,
+    opacity 0.38s ease-out;
+}
+
+.discard-animation-card--fly {
+  opacity: 0;
+}
+
+@keyframes dealIn {
+  from {
+    transform: translate(var(--deal-from-x), var(--deal-from-y)) scale(0.1);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 8px 14px rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(197, 164, 109, 0.6); /* brass glow */
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

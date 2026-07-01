@@ -1,0 +1,34 @@
+.casino-felt {
+  background-image: url("/textures/table-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: relative;
+  /* Make the felt fill the entire viewport */
+  width: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
+
+  /* Keep board and controls in-frame on small screens */
+  overflow: hidden;
+
+  /* Optional: center your game board */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: clamp(12px, 4vh, 40px);
+  padding-bottom: calc(var(--card-height) + 28px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .casino-felt {
+    /* Keep top piles below the settings cog on small screens */
+    padding-top: max(
+      clamp(12px, 4vh, 40px),
+      calc(env(safe-area-inset-top) + 62px)
+    );
+  }
+}
