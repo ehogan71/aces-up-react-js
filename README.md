@@ -149,7 +149,7 @@ Settings:
 
 ## Demo
 
-Optional live demo URL: `<add-your-demo-url>`
+Optional live demo URL: `https://ehogan71.github.io/aces-up-react-js/`
 
 ## Author
 
