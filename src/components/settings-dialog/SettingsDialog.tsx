@@ -108,7 +108,7 @@ export const SettingsDialog: React.FC<SettingsDialogProps> = ({
           <h3>Site Info</h3>
           <p>Developed by Edward Hogan</p>
           <p>Powered by React.js</p>
-          <p>Version v1.0.0</p>
+          <p>Version v1.0.1</p>
         </section>
       </div>
     </div>

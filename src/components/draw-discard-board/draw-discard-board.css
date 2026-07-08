@@ -78,11 +78,11 @@
 }
 
 .card-back--red {
-  background-image: url("cards/Back-R.png");
+  background-image: url("/cards/Back-R.png");
 }
 
 .card-back--blue {
-  background-image: url("cards/Back-B.png");
+  background-image: url("/cards/Back-B.png");
 }
 
 /* Empty slot placeholder */
