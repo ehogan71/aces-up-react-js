@@ -48,7 +48,12 @@ export const Pile: React.FC<PileProps> = ({
 
         const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
           if (!canPlay || !playableAction) return;
-          onTopCardClick?.(pileIndex, card, event.currentTarget, playableAction);
+          onTopCardClick?.(
+            pileIndex,
+            card,
+            event.currentTarget,
+            playableAction,
+          );
         };
 
         return (
@@ -57,7 +62,7 @@ export const Pile: React.FC<PileProps> = ({
             className="pile-card"
             onClick={canPlay ? handleClick : undefined}
             style={{
-              top: `${index * 22}px`,
+              top: `calc(${index} * var(--pile-feather-offset))`,
               cursor: canPlay ? "pointer" : "default",
               opacity: isDiscardingSourceTopCard ? 0 : 1,
               pointerEvents: isDiscardingSourceTopCard ? "none" : "auto",

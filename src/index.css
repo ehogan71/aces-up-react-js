@@ -7,8 +7,10 @@ body,
 }
 
 :root {
+  --card-aspect-ratio: 1.452;
   --card-width: 120px;
-  --card-height: 180px;
+  --card-height: calc(var(--card-width) * var(--card-aspect-ratio));
+  --pile-feather-offset: 40px;
 }
 
 .game-over-modal-backdrop {

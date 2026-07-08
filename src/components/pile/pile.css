@@ -12,6 +12,8 @@
 .pile-card {
   position: absolute;
   left: 0;
+  width: var(--card-width);
+  height: var(--card-height);
   transition: transform 0.15s ease-out;
 }
 .playable-indicator {
@@ -39,7 +41,8 @@
 @media (max-width: 1024px) {
   :root {
     --card-width: 92px;
-    --card-height: 138px;
+    --card-height: calc(var(--card-width) * var(--card-aspect-ratio));
+    --pile-feather-offset: 31px;
   }
 }
 
@@ -47,7 +50,8 @@
 @media (max-width: 768px) {
   :root {
     --card-width: clamp(70px, 19vw, 84px);
-    --card-height: calc(var(--card-width) * 1.5);
+    --card-height: calc(var(--card-width) * var(--card-aspect-ratio));
+    --pile-feather-offset: 24px;
   }
 }
 
@@ -55,7 +59,8 @@
 @media (max-width: 480px) {
   :root {
     --card-width: clamp(60px, calc((100vw - 54px) / 4), 72px);
-    --card-height: calc(var(--card-width) * 1.5);
+    --card-height: calc(var(--card-width) * var(--card-aspect-ratio));
+    --pile-feather-offset: 24px;
   }
 
   .playable-indicator {
@@ -70,6 +75,7 @@
 @media (max-width: 390px) {
   :root {
     --card-width: clamp(54px, calc((100vw - 50px) / 4), 68px);
-    --card-height: calc(var(--card-width) * 1.5);
+    --card-height: calc(var(--card-width) * var(--card-aspect-ratio));
+    --pile-feather-offset: 24px;
   }
 }
